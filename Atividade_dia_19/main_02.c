@@ -2,7 +2,9 @@
 Utilizem um ‘switch - case’ 
 para realizar operação escolhida e exibir o resultado. */
 #include <stdio.h>
+// bibliota ajuda excluir o enter como char #include <stdlib.h>
 #include <stdbool.h>
+
 
 int main(void){
     double num1, num2;
@@ -18,8 +20,12 @@ int main(void){
     scanf("%d", num1);
     prinf("Digite o segundo número: \n");
     scanf("%d", num2);
+    // espaço, enter é um carcter por isso limpar antes
+    while ((getchar()) != '\n');
     printf("Digite o operador (+, -, *, /): \n");
+   // ideia de aluno: fflush(stdin);
     scanf("%c", op); 
+
 
     // abre switc e coloca condição ()
     switch (op){
@@ -46,7 +52,7 @@ int main(void){
             printf("Erro: Divisão por zero!\n");
             return 1;
         }break;
-        // porque default
+        // porque default para dar erro caso digite 5, pois só existe 4 casos
         default;
         printf("Operador invalido!\n");
         return 1;
